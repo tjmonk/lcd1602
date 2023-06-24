@@ -7,8 +7,6 @@ project(lcd1602
     DESCRIPTION "LCD 16 char x 2 line LCD display service"
 )
 
-find_library( LIB_VARSERVER varserver REQUIRED )
-
 add_executable( ${PROJECT_NAME}
 	src/lcd.c
     src/lcd_ctrl.c
@@ -20,7 +18,7 @@ target_include_directories( ${PROJECT_NAME}
 )
 
 target_link_libraries( ${PROJECT_NAME}
-	${LIB_VARSERVER}
+	varserver
 )
 
 set_target_properties( ${PROJECT_NAME}
